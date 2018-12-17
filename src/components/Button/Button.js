@@ -1,14 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Button({ text }) {
-    return <button>{text}</button>;
+/** A really great button Button component. */
+function Button({ text, type }) {
+    return <button type={type}>{text}</button>;
 }
 
-Button.defaultProps = {};
+Button.defaultProps = {
+    text: 'Button',
+    type: 'button'
+};
 
 Button.propTypes = {
-    text: PropTypes.string.isRequired
+    /** Button Text */
+    text: PropTypes.string.isRequired,
+    /** Button Type */
+    type: PropTypes.string
 };
 
 export default Button;
