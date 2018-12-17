@@ -10,12 +10,12 @@ function InputText({ label, onChange, value }) {
     );
 }
 
-InputText.defaultProps = {};
-
 InputText.propTypes = {
     label: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string.isRequired
 };
+
+InputText.defaultProps = {};
 
 export default InputText;

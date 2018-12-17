@@ -15,13 +15,13 @@ function Select({ label, onChange, options }) {
     );
 }
 
-Select.defaultProps = {
-    options: [{ label: 'Option 1', value: 1 }]
-};
-
 Select.propTypes = {
     onChange: PropTypes.func.isRequired,
     options: PropTypes.array.isRequired
+};
+
+Select.defaultProps = {
+    options: [{ label: 'Option 1', value: 1 }]
 };
 
 export default Select;

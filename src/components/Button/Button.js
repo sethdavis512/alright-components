@@ -6,16 +6,16 @@ function Button({ text, type }) {
     return <button type={type}>{text}</button>;
 }
 
-Button.defaultProps = {
-    text: 'Button',
-    type: 'button'
-};
-
 Button.propTypes = {
     /** Button Text */
     text: PropTypes.string.isRequired,
     /** Button Type */
     type: PropTypes.string
+};
+
+Button.defaultProps = {
+    text: 'Button',
+    type: 'button'
 };
 
 export default Button;

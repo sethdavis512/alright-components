@@ -1,8 +1,6 @@
 import React from 'react';
 import Button from 'alright-components/Button';
 
-function ExampleButton() {
+export default function ExampleButton() {
     return <Button text="Test" />;
 }
-
-export default ExampleButton;

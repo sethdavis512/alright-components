@@ -37,15 +37,15 @@ class ProgressBar extends Component {
     }
 }
 
-ProgressBar.defaultProps = {
-    height: 20,
-    width: 200
-};
-
 ProgressBar.propTypes = {
     percent: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number
+};
+
+ProgressBar.defaultProps = {
+    height: 20,
+    width: 200
 };
 
 export default ProgressBar;
