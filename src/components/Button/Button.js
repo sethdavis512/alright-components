@@ -9,6 +9,7 @@ function Button({ text, type }) {
 Button.propTypes = {
     /** Button Text */
     text: PropTypes.string.isRequired,
+
     /** Button Type */
     type: PropTypes.string
 };
