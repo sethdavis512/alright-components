@@ -1,7 +1,11 @@
 {
     "name": "alright-components",
-    "version": "0.1.0",
-    "private": true,
+    "version": "0.0.2",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/setholito/alright-components"
+    },
+    "license": "(MIT OR Apache-2.0)",
     "dependencies": {
         "@babel/core": "7.1.0",
         "@svgr/webpack": "2.4.1",
@@ -81,6 +85,7 @@
         "setupFiles": [
             "react-app-polyfill/jsdom"
         ],
+        "setupTestFrameworkScriptFile": "./setupJest.js",
         "testMatch": [
             "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
             "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
@@ -120,8 +125,12 @@
     },
     "devDependencies": {
         "chokidar": "^2.0.4",
+        "enzyme": "^3.8.0",
+        "enzyme-adapter-react-16": "^1.7.1",
         "npm-run-all": "^4.1.5",
         "prop-types": "^15.6.2",
-        "react-docgen": "^2.21.0"
+        "react-addons-test-utils": "^15.6.2",
+        "react-docgen": "^2.21.0",
+        "react-test-renderer": "^16.6.3"
     }
 }
