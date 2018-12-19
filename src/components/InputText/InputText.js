@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function InputText({ label, onChange, value }) {
+function InputText({ label = 'Label', onChange, value = '' }) {
     return (
         <label>
             {label}
@@ -15,7 +15,5 @@ InputText.propTypes = {
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string.isRequired
 };
-
-InputText.defaultProps = {};
 
 export default InputText;
