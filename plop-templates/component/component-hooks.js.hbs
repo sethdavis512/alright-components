@@ -1,0 +1,20 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
+/** An alright component. */
+function {{ componentName }}({ children }) {
+    return (
+        <div>{ children }</div>
+    );
+}
+
+/** An alright component. */
+{{ componentName }}.propTypes = {
+    /** {{ componentName }} children */
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
+};
+
+export default {{ componentName }};
