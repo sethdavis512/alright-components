@@ -15,6 +15,7 @@ class CodeExample extends React.Component {
     render() {
         return (
             <pre
+                className="border rounded-lg"
                 ref={ref => {
                     this.element = ref;
                 }}

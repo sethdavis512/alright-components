@@ -1,61 +1,123 @@
-/* Global styles */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #666666;
+@tailwind base;
+@tailwind components;
+
+/* === GLOBAL === */
+
+html,
+body,
+#root {
+    @apply h-full;
 }
 
-a, a:visited {
-  color: #666666;
+.is-dark {
+    @apply bg-gray-700 text-gray-100;
 }
 
-.clear {
-  clear: both;
+/* === TYPOGRAPHY === */
+
+h1,
+h2,
+h3 {
+    @apply font-bold;
 }
 
-td {
-  border-top: solid 1px #d3d3d3;
+h4,
+h5,
+h6 {
+    @apply font-medium;
 }
 
-td, th {
-  padding: 10px;
+h1 {
+    @apply text-3xl;
 }
 
-table {
-  border-collapse:collapse;
+h2 {
+    @apply text-2xl;
 }
 
-/* Documentation site component styles */
-.example {
-  border: solid 1px #d3d3d3;
-  padding: 16px;
-  margin-bottom: 16px;
-  background-color: #f4f6f9;
+h3 {
+    @apply text-xl;
 }
 
-.example h4:first-of-type {
-   margin-top: 0;
+h4 {
+    @apply text-lg;
 }
 
-.example p:last-of-type {
-   margin-bottom: 0;
+h5 {
+    @apply text-base;
 }
 
-.props tr td:last-of-type {
-  text-align: center;
+h6 {
+    @apply text-base;
 }
 
-.props th, td {
-  text-align: left;
-  padding: 5px;
+/* === BUTTONS === */
+
+.button {
+    @apply bg-white text-gray-600 border border-gray-600 font-bold py-2 px-4 rounded shadow-md;
 }
 
-.navigation {
-  float: left;
-  width: 250px;
-  list-style-type: none;
-  padding: 0;
+.button:hover {
+    @apply bg-gray-100;
 }
 
-.componentpage {
-  margin-left: 275px;
+.button:focus {
+    @apply outline-none shadow-outline;
 }
+
+.button.is-primary {
+    @apply text-white bg-blue-500 border-blue-600;
+}
+
+.button.is-primary:hover {
+    @apply bg-blue-600;
+}
+
+.button.is-danger {
+    @apply text-white bg-red-500 border-red-600;
+}
+
+.button.is-danger:hover {
+    @apply bg-red-600;
+}
+
+.button.is-warning {
+    @apply text-white bg-yellow-500 border-yellow-600;
+}
+
+.button.is-warning:hover {
+    @apply bg-yellow-600;
+}
+
+.button.is-success {
+    @apply text-white bg-green-500 border-green-600;
+}
+
+.button.is-success:hover {
+    @apply bg-green-600;
+}
+
+/* === INPUTS === */
+
+.input-text {
+    @apply border-solid border-gray-600 border-2 shadow-md rounded-lg px-4 py-2;
+}
+
+.select {
+    /* @apply block appearance-none bg-white border border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight; */
+    @apply block appearance-none w-full bg-white border border-gray-400 px-4 py-2 pr-8 rounded shadow leading-tight;
+}
+
+.select.fullwidth {
+    @apply w-full;
+}
+
+/* === DOCS === */
+
+.example-heading {
+    @apply font-bold;
+}
+
+/* === UTILS === */
+
+@tailwind utilities;

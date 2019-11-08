@@ -5,7 +5,7 @@ function InputText({ label = 'Label', onChange, value = '' }) {
     return (
         <label>
             {label}
-            <input className="input" onChange={onChange} value={value} />
+            <input className="input-text" onChange={onChange} value={value} />
         </label>
     );
 }

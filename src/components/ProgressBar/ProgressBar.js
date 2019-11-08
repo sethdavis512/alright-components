@@ -1,51 +1,35 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class ProgressBar extends Component {
-    getColor = () => {
-        if (this.props.percent === 100) return 'green';
-        return this.props.percent > 50
-            ? 'gold'
-            : this.props.percent > 25
-            ? 'red'
-            : 'firebrick';
+function ProgressBar({ percent, width = 200, height = 20 }) {
+    const getColor = () => {
+        if (percent === 100) return 'green';
+        return percent > 50 ? 'gold' : percent > 25 ? 'red' : 'firebrick';
+    };
+    const getWidthAsPercentOfTotalWidth = () => {
+        return parseInt(width * (percent / 100), 10);
     };
 
-    getWidthAsPercentOfTotalWidth = () => {
-        return parseInt(this.props.width * (this.props.percent / 100), 10);
-    };
-
-    render() {
-        const { percent, width, height } = this.props;
-        return (
+    return (
+        <div
+            className="border border-gray-900 shadow-md overflow-hidden rounded-lg"
+            style={{ width }}
+        >
             <div
                 style={{
-                    border: '1px solid lightgray',
-                    width,
-                    borderRadius: '4px'
+                    width: getWidthAsPercentOfTotalWidth(),
+                    height,
+                    backgroundColor: getColor(percent)
                 }}
-            >
-                <div
-                    style={{
-                        width: this.getWidthAsPercentOfTotalWidth(),
-                        height,
-                        backgroundColor: this.getColor(percent)
-                    }}
-                />
-            </div>
-        );
-    }
+            />
+        </div>
+    );
 }
 
 ProgressBar.propTypes = {
     percent: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number
-};
-
-ProgressBar.defaultProps = {
-    height: 20,
-    width: 200
 };
 
 export default ProgressBar;

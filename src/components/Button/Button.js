@@ -1,16 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 /** A really great button Button component. */
-function Button({ text = 'Button', type = 'button' }) {
-    return <button type={type}>{text}</button>;
+function Button({ className = '', text = 'Button', type = 'button' }) {
+    const buttonClassName = classnames('button', className);
+    return (
+        <button className={buttonClassName} type={type}>
+            {text}
+        </button>
+    );
 }
 
 Button.propTypes = {
-    /** Button Text */
+    /** Button class name */
+    className: PropTypes.string,
+
+    /** Button text */
     text: PropTypes.string.isRequired,
 
-    /** Button Type */
+    /** Button type */
     type: PropTypes.string
 };
 

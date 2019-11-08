@@ -19,22 +19,23 @@ class Example extends React.Component {
         const { showCode } = this.state;
         const { code, description, name } = this.props.example;
         // Must use CommonJS require to dynamically require because ES Modules must be statically analyzable.
-        const ExampleComponent = require(`./examples/${
-            this.props.componentName
-        }/${name}`).default;
+        const ExampleComponent = require(`./examples/${this.props.componentName}/${name}`)
+            .default;
         return (
-            <div className="example">
-                {description && <h4>{description}</h4>}
-
-                <ExampleComponent />
-
-                <p>
-                    <a href="" onClick={this.toggleCode}>
-                        {showCode ? 'Hide' : 'Show'} Code
-                    </a>
-                </p>
-
-                {showCode && <CodeExample>{code}</CodeExample>}
+            <div className="mb-4">
+                <div className="mb-4 font-bold">
+                    {description && <p>{description}</p>}
+                </div>
+                <div className="rounded px-6 py-8 mb-4 border border-2">
+                    <ExampleComponent />
+                </div>
+                <div className="rounded px-6 py-8 mb-4 border border-2 bg-gray-800">
+                    <ExampleComponent />
+                </div>
+                <button className="button mb-4" onClick={this.toggleCode}>
+                    {showCode ? 'Hide' : 'Show'} Code
+                </button>
+                <div>{showCode && <CodeExample>{code}</CodeExample>}</div>
             </div>
         );
     }
