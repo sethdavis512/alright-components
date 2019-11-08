@@ -1,16 +1,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import {{ componentName }} from './{{ componentName }}';
+import Accordion from './Accordion';
 
-describe('{{ componentName }}', () => {
+describe('Accordion', () => {
     const defaultProps = {};
 
     function shallowComponent(props) {
-        return shallow(<{{ componentName }} {...defaultProps} {...props} />);
+        return shallow(<Accordion {...defaultProps} {...props} />);
     }
 
     it('should match default snapshot', () => {
-        const wrapper = shallowComponent();
+        const wrapper = renderComponent();
         expect(wrapper).toMatchSnapshot();
     });
 });
