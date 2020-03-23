@@ -7,11 +7,12 @@ const ComponentPage = ({ component }) => {
     const { name, description, props, examples } = component;
 
     return (
-        <div className="componentpage">
+        <div className="pb-16">
             <h2>{name}</h2>
-            <p>{description}</p>
-
-            <h3>Example{examples.length > 1 && 's'}</h3>
+            <p className="mb-4">{description}</p>
+            <h3 className="example-heading">
+                Example{examples.length > 1 && 's'}
+            </h3>
             {examples.length > 0
                 ? examples.map(example => (
                       <Example
@@ -21,7 +22,6 @@ const ComponentPage = ({ component }) => {
                       />
                   ))
                 : 'No examples exist.'}
-
             <h3>Props</h3>
             {props ? (
                 <Props props={props} />
